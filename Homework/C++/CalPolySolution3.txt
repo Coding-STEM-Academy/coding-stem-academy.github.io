@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+// Sample Solution to Question 4
+
+int main()
+{
+    string input;
+    int n2,total;
+    string num1, num2, sign1;
+
+
+    cin >> input;
+    int length;
+    length = input.length();
+
+    num1 = input.substr(0,1);
+    total = stoi(num1);
+
+    int a = 1;
+
+    while (a < length)
+        {
+
+            sign1 = input.substr(a,1);
+            if (sign1.compare("=") == 0)
+                {
+                    break;
+                }
+            num2 = input.substr(a+1,1);
+            n2 = stoi(num2);
+            if (sign1.compare("+") == 0)
+                {
+                    total = total + n2;
+                }
+            else if (sign1.compare("-") == 0)
+                {
+                    total = total - n2;
+                }
+            a=a+2;
+        }
+    cout << total;
+}

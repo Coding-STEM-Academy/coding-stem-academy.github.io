@@ -1,0 +1,28 @@
+// Cal Poly Contest Question 3
+// Sample answer by Jack Liu
+
+import java.util.Scanner;
+
+public class Java_Question3
+{
+    public static void main(String[]args)
+    {
+        Scanner in=new Scanner(System.in);
+        // System.out.println("Enter an equation");
+        String s=in.next();
+        int cursum=Integer.parseInt(Character.toString(s.charAt(0)));
+        for (int c=0;c<s.length();c++){
+            char fur=s.charAt(c);
+            if (fur=='+'){
+
+                cursum=cursum+Integer.parseInt(Character.toString(s.charAt(c+1)));
+            }
+            else if (fur=='-'){
+
+                cursum=cursum-Integer.parseInt(Character.toString(s.charAt(c+1)));
+            }
+
+        }
+        System.out.println("Answer: "+cursum);
+    }
+}

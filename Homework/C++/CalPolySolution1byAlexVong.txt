@@ -1,0 +1,73 @@
+#include <iostream>
+
+using namespace std;
+
+// Alex Vong Sample Solution to Question 1
+
+int main()
+{
+    string input;
+    string output;
+    string substring;
+    cin >> input;
+    int length;
+    length = input.length();
+    for(int a = 0;a < length ;a++)
+    {
+        substring = toupper(input[a]);
+
+        if ((substring.compare("A") == 0) ||
+            (substring.compare("B") == 0) ||
+            (substring.compare("C") == 0))
+         {
+            cout << "2";
+         }
+        else if ((substring.compare("D") == 0) ||
+            (substring.compare("E") == 0) ||
+            (substring.compare("F") == 0))
+         {
+            cout << "3";
+         }
+        else if ((substring.compare("G") == 0) ||
+            (substring.compare("H") == 0) ||
+            (substring.compare("I") == 0))
+         {
+            cout << "4";
+         }
+        else if ((substring.compare("J") == 0) ||
+            (substring.compare("K") == 0) ||
+            (substring.compare("L") == 0))
+         {
+            cout << "5";
+         }
+        else if ((substring.compare("M") == 0) ||
+            (substring.compare("N") == 0) ||
+            (substring.compare("O") == 0))
+         {
+            cout << "6";
+         }
+        else if ((substring.compare("P") == 0) ||
+            (substring.compare("Q") == 0) ||
+            (substring.compare("R") == 0) ||
+            (substring.compare("S") == 0))
+         {
+            cout << "7";
+         }
+        else if ((substring.compare("T") == 0) ||
+            (substring.compare("U") == 0) ||
+            (substring.compare("V") == 0))
+         {
+            cout << "8";
+         }
+        else if ((substring.compare("W") == 0) ||
+            (substring.compare("X") == 0) ||
+            (substring.compare("Y") == 0) ||
+            (substring.compare("Z") == 0))
+         {
+            cout << "9";
+         }
+        else{
+            cout << input[a];
+        }
+    }
+}

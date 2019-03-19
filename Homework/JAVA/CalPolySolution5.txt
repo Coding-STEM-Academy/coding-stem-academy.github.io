@@ -1,0 +1,37 @@
+// Cal Poly Contest Question 5
+// Sample answer by Jack Liu
+
+import java.util.Scanner;
+
+public class Java_Question5
+{
+    public static void main(String[]args)
+    {
+        Scanner nextLine = new Scanner(System.in);
+        String Palindrome;
+        double rep;
+        double total=0,temp;
+        //        while (0==0){
+
+        //System.out.println("Enter a number and I will tell you if it is perfect: ");
+        double i=nextLine.nextInt();
+        for (rep=0;rep<i;rep++){
+
+            if (i%rep==0){
+                total=total+rep;
+
+            }
+            else{
+
+            }
+
+        }
+
+        if (i>=total){
+            System.out.println("1");
+        }
+        else{System.out.println("0");
+        }
+        //        }
+    }
+}

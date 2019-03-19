@@ -1,0 +1,24 @@
+// Cal Poly Contest Question 4
+// Sample answer by Jack Liu
+
+import java.util.Scanner;
+
+public class Java_Question4
+{
+    public static void main(String[]args)
+    {
+        Scanner in=new Scanner(System.in);
+        //System.out.println("Enter a number");
+        int y=in.nextInt();
+        int num=0;
+        int[] a=new int [y];
+        //System.out.println("Enter "+y+" numbers to add");
+        for (int z=0;z<y;z++){
+
+            a[z]=in.nextInt();
+            num=Integer.parseInt((num+"").concat(a[z]+""));
+        }
+        num++;
+        System.out.println("Total: "+num);
+    }
+}

@@ -1,0 +1,100 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
+
+string* compare_string(string str1, string str2)
+{
+    int k = 0; //index
+    int skip = 0;
+    string* temp = new string[64];
+    for (int i = 0 ; i <= (str1.size()-1); i++ )
+        {
+            for (int j = skip ; j <= (str2.size()-1); j++ )
+                {
+                    if (str1.substr(i,1).compare(str2.substr(j,1))==0)
+                        {
+                            temp[k++] = str1.substr(i,1);
+                            skip = j;
+
+                        }
+                }
+        }
+    return temp;
+}
+
+int main()
+{
+    string line;
+    ifstream myfile( "2int-diff-testdata.txt" );
+    ofstream myoutfile( "2int-diff-output.txt" );
+    string* final_array = new string[64];
+    string* arr1 = new string[64];
+    string* arr2 = new string[64];
+
+    if (myfile)
+        {
+            while (getline( myfile, line ))
+                {
+                    int length = line.size();
+
+                    size_t found = line.find(" ");
+
+                    if (found != string::npos)
+                        {
+                            string str1 = line.substr(0,found);
+                            string str2 = line.substr(found+1,length-1);
+
+                            arr1 = compare_string(str1, str2);
+                            arr2 = compare_string(str2, str1);
+                            for (int n=0; n < 64; n++)
+                                {
+                                    cout << arr1[n];
+                                    final_array[n]="";
+                                }
+                            cout << endl;
+                            for (int n=0; n < 64; n++)
+                                {
+                                    cout << arr2[n];
+                                    final_array[n]="";
+                                }
+                            cout << endl;
+
+                            sort( arr1, arr1+64);
+                            sort( arr2, arr2+64);
+
+                            int skip = 0;
+                            int d=0;
+                            for (int i = 0 ; i < 64; i++ )
+                                {
+                                    if (arr1[i] != "")
+                                        {
+                                            for (int j = skip ; j < 64; j++ )
+                                                {
+                                                    if (arr2[j] != "")
+                                                        {
+                                                            if (arr1[i] == arr2[j])
+                                                                {
+                                                                    if ((arr2[j] != arr2[j-1] ) && (arr1[i] != arr1[i-1] ))
+                                                                        final_array[d++] = arr1[i];
+                                                                    skip = j;
+                                                                }
+                                                        }
+                                                }
+                                        }
+
+                                }
+
+                        }
+                }
+            myfile.close();
+            myoutfile.close();
+        }
+    else
+        cout << "Unable to open/read file ";
+
+    return 0;
+}

@@ -1,0 +1,4 @@
+AuthUserFile "/services/users/zfh1/jimslo10/www/codingstemacademy.com/Homework/JAVA/.htaclu"
+AuthName Members
+AuthType Basic
+Require valid-user

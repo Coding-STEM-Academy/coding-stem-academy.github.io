@@ -1,0 +1,32 @@
+// Sample solution for Question 4 
+// Alex Vong
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int number;
+    cin >> number;
+    int a = 0;
+    string number2;
+    string fullstring;
+    int fullnum;
+    int total;
+    while(a < number)
+    {
+        cin >> number2;
+        fullstring = fullstring + number2;
+        a++;
+    }
+    fullnum = stoi(fullstring);
+    total = fullnum + 1;
+    std::string total2 = std::to_string(total);
+    int length = total2.length();
+    for (int d = 0;d<length; d++)
+    {
+        cout << total2[d] << endl;
+    }
+    return 0;
+}
